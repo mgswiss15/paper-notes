@@ -525,5 +525,35 @@
   primaryClass = {cs}
 }
 
+@article{winklerLearningLikelihoodsConditional2019,
+  title = {Learning {{Likelihoods}} with {{Conditional Normalizing Flows}}},
+  author = {Winkler, Christina and Worrall, Daniel and Hoogeboom, Emiel and Welling, Max},
+  date = {2019-11-29},
+  url = {http://arxiv.org/abs/1912.00042},
+  urldate = {2020-06-24},
+  abstract = {Normalizing Flows (NFs) are able to model complicated distributions p(y) with strong inter-dimensional correlations and high multimodality by transforming a simple base density p(z) through an invertible neural network under the change of variables formula. Such behavior is desirable in multivariate structured prediction tasks, where handcrafted per-pixel loss-based methods inadequately capture strong correlations between output dimensions. We present a study of conditional normalizing flows (CNFs), a class of NFs where the base density to output space mapping is conditioned on an input x, to model conditional densities p(y|x). CNFs are efficient in sampling and inference, they can be trained with a likelihood-based objective, and CNFs, being generative flows, do not suffer from mode collapse or training instabilities. We provide an effective method to train continuous CNFs for binary problems and in particular, we apply these CNFs to super-resolution and vessel segmentation tasks demonstrating competitive performance on standard benchmark datasets in terms of likelihood and conventional metrics.},
+  archivePrefix = {arXiv},
+  eprint = {1912.00042},
+  eprinttype = {arxiv},
+  file = {/home/magda/Dropbox/ZoteroFiles/Winkler et al_2019_Learning Likelihoods with Conditional Normalizing Flows.pdf;/home/magda/Zotero/storage/HU97Z8WV/1912.html},
+  keywords = {conditional generations,done reading,dropbox paper notes,xxx},
+  primaryClass = {cs, stat},
+  version = {1}
+}
 
+@article{livneTzKFlowBasedConditional2019,
+  title = {{{TzK}}: {{Flow}}-{{Based Conditional Generative Model}}},
+  shorttitle = {{{TzK}}},
+  author = {Livne, Micha and Fleet, David},
+  date = {2019-04-22},
+  url = {http://arxiv.org/abs/1902.01893},
+  urldate = {2020-06-27},
+  abstract = {We formulate a new class of conditional generative models based on probability flows. Trained with maximum likelihood, it provides efficient inference and sampling from class-conditionals or the joint distribution, and does not require a priori knowledge of the number of classes or the relationships between classes. This allows one to train generative models from multiple, heterogeneous datasets, while retaining strong prior models over subsets of the data (e.g., from a single dataset, class label, or attribute). In this paper, in addition to end-to-end learning, we show how one can learn a single model from multiple datasets with a relatively weak Glow architecture, and then extend it by conditioning on different knowledge types (e.g., a single dataset). This yields log likelihood comparable to state-of-the-art, compelling samples from conditional priors.},
+  archivePrefix = {arXiv},
+  eprint = {1902.01893},
+  eprinttype = {arxiv},
+  file = {/home/magda/Dropbox/ZoteroFiles/Livne_Fleet_2019_TzK.pdf;/home/magda/Zotero/storage/VY33D7DL/1902.html},
+  keywords = {conditional generations,done reading,flows,lifelong},
+  primaryClass = {cs, stat}
+}
 

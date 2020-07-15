@@ -12,7 +12,7 @@
 \tldr They use flow model to predict future video frames. They argue by the usual advantages of flows as compared to VAEs, GANs and autoregressive (explicit likelihood, easier training, faster generations). The flows operate over individual frames (usual realNVP and Glow architecture and tricks) and the temporal dependence is only factored into the latent distribution $p_{\theta}(\bz)$ via temporal autoregressive probability model. 
 \end{notebox}
 
-The aim is stochastic prediction of video sequences - synthesizing RGB video frames conditioned on a few previous frames. Unlike previous work for video generations the flow-based model can generate diverse stochastic futures (as opposed to deterministic models) relatively cheaply (as compared to autoregressive models) and at the same time provide exact likelihood estimates (as opposed to VAEs or GANs).
+The aim is stochastic prediction of video\index{video} sequences - synthesizing RGB video frames conditioned on a few previous frames. Unlike previous work for video generations the flow-based model can generate diverse stochastic futures (as opposed to deterministic models) relatively cheaply (as compared to autoregressive models) and at the same time provide exact likelihood estimates (as opposed to VAEs or GANs).
 
 Points out standard disadvantages of other generative models (VAEs \& GANs lack of likelihood estimtes, GANs difficult to train, autoregressive slow to sample/generate). Moreover previously proposed \emph{deterministic} models for video generation can only generate single future which either disregards other possibilities or mixes all of them into a blurry single future.
 
