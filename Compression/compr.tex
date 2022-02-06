@@ -36,6 +36,9 @@
 % chagne format of section titles
 \usepackage{titlesec}
 
+% algorithms
+\usepackage[]{algorithm2e}
+
 % \titleformat*{\section}{\LARGE\bfseries}
 % \titleformat*{\subsection}{\Large\bfseries}
 % \titleformat*{\subsubsection}{\large\bfseries}
@@ -45,7 +48,8 @@
 % nice text boxes
 \usepackage{tcolorbox}
 \newtcbox{\note}{on line, boxrule=0pt, boxsep=0pt, arc=0pt, outer arc=0pt, left=1pt, right=1pt, top=2pt, bottom=2pt, fontupper=\itshape}
-\newtcolorbox{notebox}{boxrule=0pt}
+% \newtcolorbox{notebox}{boxrule=0pt}
+\newtcolorbox{notebox}[1][colback=black!5]{boxrule=0pt, #1}
 
 % biblatex seetings for better referencing
 \usepackage[backend=biber,
@@ -121,6 +125,8 @@ This is a working document, not  polished, with possible typos, editing errors, 
 \input{thoughts}
 
 \input{arithmeticbitsback}
+
+\input{rans}
 
 
 
