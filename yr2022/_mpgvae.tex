@@ -18,13 +18,18 @@ Read for Yoann's\index{Yoann} work 5/2/2022
 \end{notebox}
 
 \begin{notebox}[colback=red!5]
-\tldr Federated learning setup where server has data with labels and clients have unlabelled data, moreover with some 
+\tldr Builts on GraphVAE (Simonovsky and Komodakis, 2018) but bypasses the graph matching problem by relaying on message passing NN in encoder and decoder so that the reconstruction loss can be calculated directly. Message passing over edges, nodes use attention to aggregate these.
+To get from node representation to laten vector they use set2vec\index{set2vec} from Vinyals 2015 to be invariant to the node ordering.
+To get from latent back to graph they use simply linear layer and then message passing, finishing with softmax over node and egde representation to create stochastic edge and node graph representations from which the graphs can be samples (in practice assume by max category).
+The reconstruction loss assumes independence of node and edge features $p\theta(G|z) = \Pi_{v \in G} p(x_v | z) \Pi_{u \in G} p(e_{uv} | z)$
 \end{notebox}
 
 \begin{notebox}[colback=yellow!5]
 \textbf{Notes:} 
 \begin{itemize}[nosep]
-\item presented by Manual at CAIRO readings 6/2/2022
+\item code not publicly available - asked first author, no answer
+\item set2vec to be invariant to node ordering when getting from the node representation in the last MPNN layer the latent representation $z$, on the way back can use use MLP and MPNN cause the ordering problem was solved when moving to the latent
+\item \emph{\textbf{I still do not see how the reconstruction loss can be evaluated. Even with the independence assumptions, each of the node/ edge likelihoods has to be matched to the respective edge/ node in the original graph. How can this be done without some matching procedure?}}
 \end{itemize}
 \end{notebox}
 
