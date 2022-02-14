@@ -31,4 +31,15 @@ Read with Simon\index{Simon} on 9/2/2022
 
 Generative model where data are generated through Langevin dynamics \parencite{welling_bayesian_nodate} using gradients estimated through score matching \parencite{hyvarinen_estimation_nodate}.
 
-They perturb the data with small Gaussian noise to ensure the data don't ley 
+They perturb the data with small Gaussian noise to ensure the data don't lie on a low dimensional manifold within the original feature space which would make the gradients ill-defined. They also propose to anneal the Langevin dynamics sampling process with gradually decreasing noise levels.
+
+The model is based on estimating the (Stein) score\index{index} that is the gradient of the log data density with respect to the data $\nabla_{\rvx} \log p(\rvx)$ (though standard score function in statistics is the gradient with respect to the parameters of the distribution at a fixed data point - this is acknowledged in the original [33] paper of Jordan's group but not in this paper).
+
+The score network $s_\theta: R^D \to R^D$ shall be trained to estimate the score without estimating the data likelihood $p(\rvx)$ first. Once trained, it can be used within Langevin dynamics sampling to generate new data examples.
+
+The score matching objective is the minimization of $0.5 \E_{p_{data}} \Vert s_{\theta}(\rvx) - \nabla_{\rvx} \log p(\rvx) \Vert_2^2$ which has been show (in \cite{hyvarinen_estimation_nodate} to be equivalent to the minimization of
+\begin{align*}
+\E_{p_{data}}(\rvx) \left[ tr(\nabla_\rvx s_\theta(\rvx)) + \frac{1}{2} \Vert s_\theta(\rvx) \Vert_2^2 \right]
+\end{align*}
+
+They use score matching from \parencite{hyvarinen_estimation_nodate}
